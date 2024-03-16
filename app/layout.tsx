@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/provider/ThemeProvider'
 import { ReactNode } from 'react'
 import { Toaster } from '@/components/ui/toaster'
 import DesignerContextProvider from '@/components/context/DesignerContext'
+import NextToploader from 'nextjs-toploader'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout ({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
+          <NextToploader/>
           <DesignerContextProvider>
             <ThemeProvider
               attribute="class"
