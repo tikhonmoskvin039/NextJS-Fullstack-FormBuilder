@@ -78,7 +78,7 @@ const StatsCards = ({ loading, data }: StatsCardsProps) => {
       <StatsCard title='Bounce rate'
         icon={<TbArrowBounce className='text-red-600'/>}
         helperText='Visits that leave without interacting'
-        value={data?.visits.toLocaleString() + '%' || ''}
+        value={data?.bounceRate.toLocaleString() + '%' || ''}
         loading={loading}
         className='shadow-md shadow-red-600'
       />
@@ -95,7 +95,7 @@ interface StatsCardProps {
   className: string
 }
 
-const StatsCard = ({
+export const StatsCard = ({
   title
   , icon
   , helperText
