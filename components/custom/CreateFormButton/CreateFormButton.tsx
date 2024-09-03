@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react'
 import {
   Dialog,
@@ -8,7 +9,7 @@ import {
   DialogTrigger,
   DialogDescription,
   DialogFooter
-} from './ui/dialog'
+} from '../../ui/dialog'
 import {
   Form,
   FormControl,
@@ -16,20 +17,20 @@ import {
   FormItem,
   FormLabel,
   FormMessage
-} from './ui/form'
+} from '../../ui/form'
 import { BsFileEarmarkPlus } from 'react-icons/bs'
 import { ImSpinner2 } from 'react-icons/im'
-import { Button } from './ui/button'
+import { Button } from '../../ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { Input } from './ui/input'
-import { Textarea } from './ui/textarea'
-import { toast } from './ui/use-toast'
+import { Input } from '../../ui/input'
+import { Textarea } from '../../ui/textarea'
+import { toast } from '../../ui/use-toast'
 import { formSchema, formSchemaType } from '@/schemas/form'
 import { CreateForm } from '@/actions/form'
 import { useRouter } from 'next/navigation'
 
-const CreateFormBtn = () => {
+export const CreateFormButton = () => {
   const router = useRouter()
   const form = useForm<formSchemaType>({
     resolver: zodResolver(formSchema)
@@ -117,5 +118,3 @@ const CreateFormBtn = () => {
     </Dialog>
   )
 }
-
-export default CreateFormBtn

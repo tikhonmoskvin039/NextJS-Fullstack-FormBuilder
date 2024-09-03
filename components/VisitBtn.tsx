@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 
-const VisitBtn = ({ shareUrl }: {shareUrl: string}) => {
+const VisitBtn = ({ shareURL }: {shareURL: string}) => {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const VisitBtn = ({ shareUrl }: {shareUrl: string}) => {
   if (!mounted) {
     return null
   }
-  const shareLink = `${window.location.origin}/submit/${shareUrl}`
+  const shareLink = `${window.location.origin}/submit/${shareURL}`
   return (
     <Button className='w-[200px]'
         onClick={() => {
